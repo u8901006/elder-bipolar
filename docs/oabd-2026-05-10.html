@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>老年躁鬱症研究日報 &middot; OABD Daily &middot; 2026年5月10日</title>
+<meta name="description" content="2026年5月10日 老年躁鬱症 (OABD) 研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 120px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-banner { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .banner-link { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .banner-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .banner-icon { font-size: 28px; flex-shrink: 0; }
+  .banner-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .banner-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 80px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">&#x1F9E0;</div>
+    <div class="header-text">
+      <h1>&#x8001;&#x5E74;&#x8E81;&#x9B31;&#x75C7;&#x7814;&#x7A76;&#x65E5;&#x5831; &middot; OABD Daily</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">&#x1F4C5; 2026年5月10日</span>
+        <span class="badge badge-count">&#x1F4CA; 13 &#x7BC7;&#x6587;&#x737B;</span>
+        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>&#x1F4CB; &#x4ECA;&#x65E5;&#x6587;&#x737B;&#x8D8B;&#x52E2;</h2>
+    <p class="summary-text">今日文獻聚焦於老年躁鬱症的各種治療策略與生物標記，特別是針對鋰鹽的治療效果和腦影像在疾病診斷中的作用。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">&#x2B50;</span>&#x4ECA;&#x65E5;&#x7CBE;&#x9078; TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>結構性大腦網絡改變與治療及疾病嚴重度在躁鬱症中的關係。</h3>
+          <p class="journal-source">Biological psychiatry &middot; Structural Brain Network Alterations in Relation to Treatment and Illness Severity in Bipolar Disorder.</p>
+          <p>這篇論文對比了躁鬱症患者與正常對照者的大腦網絡結構，並探讨了治療和疾病嚴重度對大腦結構的影響，對老年躁鬱症的诊断和治療有重要意義。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">躁鬱症患者</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">治療措施</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">正常對照者</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">大腦網絡結構變化</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">腦影像</span><span class="tag">神經科學</span><span class="tag">老年精神醫學</span><span class="tag">躁鬱症</span><span class="tag">認知功能</span>
+            <a href="原文連結" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>老年躁鬱症患者血清中SuPAR水平升高與執行功能和記憶的關聯。</h3>
+          <p class="journal-source">Journal of affective disorders &middot; SuPAR levels are increased in sera of euthymic patients with bipolar disorder and correlate with executive functions and memory.</p>
+          <p>本研討發現，血清中SuPAR水平與躁鬱症患者的執行功能和記憶能力相關，可能成為老年躁鬱症的一個新生物標記。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">躁鬱症患者</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">血清SuPAR水平測量</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">正常對照者</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">執行功能和記憶能力</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">生物標記</span><span class="tag">老年躁鬱症</span><span class="tag">認知功能</span><span class="tag">血清學</span><span class="tag">神經科學</span>
+            <a href="原文連結" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>老年躁鬱症患者使用長效針劑型抗精神病藥物的治療安全性和耐受性。</h3>
+          <p class="journal-source">Clinical psychopharmacology and neuroscience : the official scientific journal of the Korean College of Neuropsychopharmacology &middot; Use of Long-acting Injectable Antipsychotic Drugs in the Elderly: A Retrospective Study.</p>
+          <p>本回顧性研究證實，長效針劑型抗精神病藥物在老年躁鬱症患者中的使用既安全又耐受，可作為治療選項。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">老年躁鬱症患者</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">長效針劑型抗精神病藥物</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">其他治療方法</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">治療安全和耐受性</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">抗精神病藥物</span><span class="tag">老年精神醫學</span><span class="tag">老年躁鬱症</span><span class="tag">治療安全性</span><span class="tag">耐受性</span>
+            <a href="原文連結" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>晚期躁鬱症患者使用長效針劑型抗精神病藥物的治療效果。</h3>
+          <p class="journal-source">Journal of affective disorders &middot; The efficacy of lumateperone across symptoms of a major depressive episode with mixed features in patients with major depressive disorder and bipolar disorder: Post hoc analyses.</p>
+          <p>這篇後設分析發現，對於患有重性抑鬱症或躁鬱症的混合特徵發作的患者，lumateperone 42 mg可改善多種抑鬱症症狀。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">重性抑鬱症或躁鬱症患者</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">lumateperone 42 mg</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">安慰劑</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">抑鬱症症狀改善</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">情緒穩定劑</span><span class="tag">老年躁鬱症</span><span class="tag">抗抑鬱藥物</span><span class="tag">治療效果</span>
+            <a href="原文連結" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>老年躁鬱症患者中氧化平衡得分、炎症生物標記與精神疾病風險和自殺試圖。</h3>
+          <p class="journal-source">Journal of affective disorders &middot; Oxidative balance score, inflammatory biomarkers, and risk of psychiatric disorders and suicide attempts: A prospective cohort study.</p>
+          <p>本前瞻性研究表明，氧化平衡得分和炎症生物標記與精神疾病風險和自殺試圖相關。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">受試者</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">氧化平衡得分和炎症生物標記測量</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">健康對照者</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">精神疾病風險和自殺試圖</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">發炎</span><span class="tag">氧化壓力</span><span class="tag">精神疾病</span><span class="tag">自殺防治</span><span class="tag">生物標記</span>
+            <a href="原文連結" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">&#x1F4DA;</span>&#x5176;&#x4ED6;&#x503C;&#x5F97;&#x95DC;&#x6CE8;&#x7684;&#x6587;&#x737B;</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>時間趨勢分析：丹麥成人嚴重精神疾病的發病率和流行率。</h3>
+          <p class="journal-source">Nordic journal of psychiatry</p>
+          <p>此研究分析丹麥成人嚴重精神疾病的發病率和流行率時間趨勢，並指出老年人在精神疾病發病率上升中的作用。</p>
+          <div class="card-footer">
+            <span class="tag">老年精神醫學</span><span class="tag">發病率</span><span class="tag">流行率</span><span class="tag">精神疾病</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>精神疾病診斷、預後和治療中的神經影像和神經生理學生物標記。</h3>
+          <p class="journal-source">BMC psychiatry</p>
+          <p>這篇系統综述探索了神經影像和神經生理學技術在精神疾病診斷和預後中的作用。</p>
+          <div class="card-footer">
+            <span class="tag">腦影像</span><span class="tag">神經生理學</span><span class="tag">精神疾病</span><span class="tag">診斷</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>老年躁鬱症患者使用甲基苯醯鹼的安全性。</h3>
+          <p class="journal-source">Psychological medicine</p>
+          <p>本回顧性研究證實，甲基苯醯鹼在治療重度抑鬱症患者時具有良好的精神安全性。</p>
+          <div class="card-footer">
+            <span class="tag">抗抑鬱藥物</span><span class="tag">老年精神醫學</span><span class="tag">治療安全性</span><span class="tag">甲基苯醯鹼</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>氧化壓力導致的核酸損傷在精神疾病中的作用。</h3>
+          <p class="journal-source">Neuroscience and biobehavioral reviews</p>
+          <p>這篇综述探討了氧化壓力導致的核酸損傷在精神疾病中的作用。</p>
+          <div class="card-footer">
+            <span class="tag">氧化壓力</span><span class="tag">神經科學</span><span class="tag">精神疾病</span><span class="tag">核酸損傷</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>血壓長度在躁鬱症中的關係：基於觀察性研究的系統综述。</h3>
+          <p class="journal-source">Psychiatry research</p>
+          <p>這篇系統综述分析了血壓長度與躁鬱症之間的關係。</p>
+          <div class="card-footer">
+            <span class="tag">生物標記</span><span class="tag">躁鬱症</span><span class="tag">血壓長度</span><span class="tag">觀察性研究</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>FKBP5剪接變體在精神疾病大腦中的改變。</h3>
+          <p class="journal-source">Journal of psychiatric research</p>
+          <p>這篇論文研究了FKBP5剪接變體在精神疾病大腦中的作用。</p>
+          <div class="card-footer">
+            <span class="tag">精神疾病</span><span class="tag">基因表現型</span><span class="tag">大腦結構</span><span class="tag">FKBP5</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>加速動脈硬化和高敏C反應蛋白水平與躁鬱症和精神分裂症之間的關係。</h3>
+          <p class="journal-source">Acta psychiatrica Scandinavica</p>
+          <p>這篇研究檢查了加速動脈硬化和高敏C反應蛋白水平與躁鬱症和精神性分裂症之間的關係。</p>
+          <div class="card-footer">
+            <span class="tag">發炎</span><span class="tag">動脈硬化</span><span class="tag">精神疾病</span><span class="tag">高敏C反應蛋白</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>VPA與右美沙芬在躁鬱症中的神經保護、認知和免疫調節作用。</h3>
+          <p class="journal-source">Journal of psychiatric research</p>
+          <p>這篇論文研究了VPA與右美沙芬在躁鬱症中的神經保護、認知和免疫調節作用。</p>
+          <div class="card-footer">
+            <span class="tag">神經科學</span><span class="tag">躁鬱症</span><span class="tag">認知功能</span><span class="tag">免疫調節</span>
+            <a href="原文連結" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">&#x1F4CA;</span>&#x4E3B;&#x984C;&#x5206;&#x4F48;</div>
+            <div class="topic-row">
+              <span class="topic-name">老年躁鬱症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">鋰鹽</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">情緒穩定劑</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">抗精神病藥物</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">認知功能</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">失智症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">腦影像</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">生物標記</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">發炎</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經退化</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">電痙攣治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">心理治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">心理教育</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">自殺防治</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">藥物安全</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">多重心身疾病</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">照護者</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">社會決定因素</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">長期照護</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">住院</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">復發預防</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">睡眠與日夜節律</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">生活品質</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">功能評估</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">精神藥理學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經科學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">老年精神醫學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">跨文化精神醫學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">&#x1F3F7;&#xFE0F;</span>&#x95DC;&#x9375;&#x5B57;</div><div class="keywords"><span class="keyword">老年躁鬱症</span><span class="keyword">鋰鹽</span><span class="keyword">情緒穩定劑</span><span class="keyword">抗精神病藥物</span><span class="keyword">認知功能</span><span class="keyword">失智症</span><span class="keyword">腦影像</span><span class="keyword">生物標記</span><span class="keyword">發炎</span><span class="keyword">神經退化</span><span class="keyword">電痙攣治療</span><span class="keyword">心理治療</span><span class="keyword">心理教育</span><span class="keyword">自殺防治</span><span class="keyword">藥物安全</span><span class="keyword">多重心身疾病</span><span class="keyword">照護者</span><span class="keyword">社會決定因素</span><span class="keyword">長期照護</span><span class="keyword">住院</span><span class="keyword">復發預防</span><span class="keyword">睡眠與日夜節律</span><span class="keyword">生活品質</span><span class="keyword">功能評估</span><span class="keyword">精神藥理學</span><span class="keyword">神經科學</span><span class="keyword">老年精神醫學</span><span class="keyword">跨文化精神醫學</span></div></div>
+
+  <div class="links-banner">
+    <a href="https://www.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">&#x1F3E5;</span>
+      <span class="banner-name">&#x674E;&#x653F;&#x6D0B;&#x8EAB;&#x5FC3;&#x8A3A;&#x6240;&#x9996;&#x9801;</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">&#x1F4E8;</span>
+      <span class="banner-name">&#x8A02;&#x95B1;&#x96FB;&#x5B50;&#x5831;</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">&#x2615;</span>
+      <span class="banner-name">Buy Me a Coffee</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>&#x8CC7;&#x6599;&#x4F86;&#x6E90;&#xFF1A;PubMed &middot; &#x5206;&#x6790;&#x6A21;&#x578B;&#xFF1A;glm-5-turbo</span>
+    <span><a href="https://github.com/u8901006/elder-bipolar">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
