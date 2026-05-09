@@ -1,0 +1,11 @@
+{
+  "name": "elder-bipolar",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch_papers.js --days 7 --max-papers 40 --output papers.json",
+    "report": "node scripts/generate_report.js --input papers.json --output docs/oabd-today.html",
+    "index": "node scripts/generate_index.js"
+  }
+}
