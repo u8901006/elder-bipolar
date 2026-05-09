@@ -2,8 +2,8 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { dirname } from "path";
 
-const API_BASE = process.env.ZHIPU_API_BASE || "https://open.bigmodel.cn/api/coding/paas/v4";
-const MODEL_FALLBACK_CHAIN = ["glm-5-turbo", "glm-4.7", "glm-4.7-flash"];
+const API_BASE = "https://open.bigmodel.cn/api/coding/paas/v4";
+const MODEL_FALLBACK_CHAIN = ["glm-4-plus", "glm-4-flash", "glm-4"];
 
 const SYSTEM_PROMPT = `你是老年精神醫學領域的資深研究員與科學傳播者，專精老年躁鬱症（Older-Age Bipolar Disorder, OABD）。
 你的任務是：
