@@ -2,8 +2,8 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { dirname } from "path";
 
-const API_BASE = "https://open.bigmodel.cn/api/coding/paas/v4";
-const MODEL_FALLBACK_CHAIN = ["glm-4-plus", "glm-4-flash", "glm-4"];
+const API_BASE = "https://integrate.api.nvidia.com/v1";
+const MODEL_FALLBACK_CHAIN = ["nvidia/nemotron-3-super-120b-a12b", "nvidia/nemotron-3-nano-30b-a3b"];
 
 const SYSTEM_PROMPT = `你是老年精神醫學領域的資深研究員與科學傳播者，專精老年躁鬱症（Older-Age Bipolar Disorder, OABD）。
 你的任務是：
@@ -36,7 +36,7 @@ function parseArgs() {
     else if (args[i] === "--output" && args[i + 1]) opts.output = args[++i];
     else if (args[i] === "--api-key" && args[i + 1]) opts.apiKey = args[++i];
   }
-  opts.apiKey = opts.apiKey || process.env.ZHIPU_API_KEY || "";
+  opts.apiKey = opts.apiKey || process.env.NVIDIA_API_KEY || "";
   return opts;
 }
 
@@ -69,7 +69,7 @@ function sanitizeJson(text) {
   }
 }
 
-async function callZhipuApi(apiKey, model, messages, maxTokens = 50000) {
+async function callNvidiaApi(apiKey, model, messages, maxTokens = 16384) {
   const resp = await fetch(`${API_BASE}/chat/completions`, {
     method: "POST",
     headers: {
@@ -79,9 +79,11 @@ async function callZhipuApi(apiKey, model, messages, maxTokens = 50000) {
     body: JSON.stringify({
       model,
       messages,
-      temperature: 0.3,
-      top_p: 0.9,
+      temperature: 1.0,
+      top_p: 0.95,
       max_tokens: maxTokens,
+      stream: false,
+      chat_template_kwargs: { enable_thinking: false },
     }),
     signal: AbortSignal.timeout(480000),
   });
@@ -162,7 +164,7 @@ ${papersText}
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         console.error(`[INFO] Trying ${model} (attempt ${attempt + 1})...`);
-        const rawText = await callZhipuApi(apiKey, model, messages);
+        const rawText = await callNvidiaApi(apiKey, model, messages);
         const result = sanitizeJson(rawText);
         console.error(`[INFO] Analysis complete: ${result.top_picks?.length || 0} top picks, ${result.all_papers?.length || 0} total`);
         return result;
@@ -201,7 +203,7 @@ function generateHtml(analysis) {
   const keywords = analysis.keywords || [];
   const topicDist = analysis.topic_distribution || {};
   const totalCount = topPicks.length + allPapers.length;
-  const usedModel = process.env.ZHIPU_MODEL || "glm-5-turbo";
+  const usedModel = MODEL_FALLBACK_CHAIN[0];
 
   let topPicksHtml = "";
   for (const pick of topPicks) {
@@ -350,7 +352,7 @@ function generateHtml(analysis) {
       <div class="header-meta">
         <span class="badge badge-date">&#x1F4C5; ${dateDisplay}</span>
         <span class="badge badge-count">&#x1F4CA; ${totalCount} &#x7BC7;&#x6587;&#x737B;</span>
-        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+<span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
       </div>
     </div>
   </header>
@@ -406,7 +408,7 @@ function escAttr(s) {
 async function main() {
   const opts = parseArgs();
   if (!opts.apiKey) {
-    console.error("[ERROR] No API key. Set ZHIPU_API_KEY env var or use --api-key");
+    console.error("[ERROR] No API key. Set NVIDIA_API_KEY env var or use --api-key");
     process.exit(1);
   }
   if (!opts.input || !opts.output) {

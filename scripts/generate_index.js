@@ -70,7 +70,7 @@ ${links}  </ul>
     <a href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">&#x2615; Buy Me a Coffee</a>
   </div>
   <footer>
-    <p>Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/elder-bipolar">GitHub</a></p>
+<p>Powered by PubMed + NVIDIA AI · <a href="https://github.com/u8901006/elder-bipolar">GitHub</a></p>
   </footer>
 </div>
 </body>
