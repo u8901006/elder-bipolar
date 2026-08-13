@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>老年躁鬱症研究日報 &middot; OABD Daily &middot; 2026年8月14日</title>
+<meta name="description" content="2026年8月14日 老年躁鬱症 (OABD) 研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 120px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-banner { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .banner-link { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .banner-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .banner-icon { font-size: 28px; flex-shrink: 0; }
+  .banner-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .banner-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 80px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">&#x1F9E0;</div>
+    <div class="header-text">
+      <h1>&#x8001;&#x5E74;&#x8E81;&#x9B31;&#x75C7;&#x7814;&#x7A76;&#x65E5;&#x5831; &middot; OABD Daily</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">&#x1F4C5; 2026年8月14日</span>
+        <span class="badge badge-count">&#x1F4CA; 25 &#x7BC7;&#x6587;&#x737B;</span>
+<span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>&#x1F4CB; &#x4ECA;&#x65E5;&#x6587;&#x737B;&#x8D8B;&#x52E2;</h2>
+    <p class="summary-text">今日文獻聚焦於老年躁鬱症（OABD）的認知功能、生物標記與鋰鹽的神經保護作用，多篇研究證實低劑量鋰鹽可降低老年人痴呆風險，並揭示皮質 thinning 與海馬結構變化為 OABD 核心病理特徵。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">&#x2B50;</span>&#x4ECA;&#x65E5;&#x7CBE;&#x9078; TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>老年躁鬱症患者記憶門診就診：透過 MRI 與腦脊髓液標誌物鑑別潛在病理機制</h3>
+          <p class="journal-source">Journal of geriatric psychiatry and neurology &middot; Patients With Older-Age Bipolar Disorder (OABD) Visiting a Memory Clinic: Differentiating Underlying Pathophysiology With MRI and Cerebrospinal Fluid Markers.</p>
+          <p>在接受記憶門診評估的 OABD 患者中，約七成未檢測出明確神經退化性診斷，但較低的 Aβ42 脑脊液濃度與較差認知功能顯著相關，提示 amyloid 代謝異常可能為 BD 相關認知衰退的可修飾生物學因子。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">102 位年齡 ≥60 歲、有認知抱怨且診斷為雙極性障礙的老年患者（OABD）</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">記憶門診的標準評估流程，包含臨床與神經心理測驗、腦脊髓液 biomarkers（Aβ42、T-Tau、P-Tau）與 MRI 視覺評分</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">有無明確神經診斷（如阿茲海默症）之 OABD 患者子群</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">29 例（28.4%）獲神經退性疾病診斷（其中 6 例為阿茲海默症）；在餘下 73 例未明確診斷者中，較低 CSF Aβ42 與較差複合認知分數顯著相關（β = -0.143, p = 0.034），而 T-Tau、P-Tau 與 MRI 標誌物無關聯</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">OABD</span><span class="tag">失智症</span><span class="tag">腦影像</span><span class="tag">生物標記</span><span class="tag">神經退化</span><span class="tag"> amyloid</span>
+            <a href="#" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>低劑量鋰鹽相較於丙戊酸在老年人中降低痴呆發生率：以電子健康記錄為基礎的傾向分數匹配隊列研究</h3>
+          <p class="journal-source">Psychiatry research &middot; Low-dose lithium vs valproate and incident dementia diagnoses in older adults: A propensity-matched cohort study using electronic health record data.</p>
+          <p>在 ≥60 歲且未曾診斷為痴呆、情感障礙或神經退化性疾病的雙極性障礙患者中，低劑量鋰鹽（血清鋰 ≤0.40 mmol/L）使用者在 2 年內發生痴呆的風險僅為丙戊酸使用者的 38%，且死亡率亦顯著降低。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">TriNetX 電子健康記錄網路中，2015–2025 年間首次使用鋰鹽（血清鋰 ≤0.40 mmol/L）或丙戊酸、年齡 ≥60 歲、無既往痴呆、輕度認知障礙、雙極性障礙、帕金森病或相關神經病的成人</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">低劑量鋰鹽（目標血清鋰 ≤0.40 mmol/L）</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">丙戊酸（作為有效主動對照藥物）</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">匹配後，鋰鹽組 3.1% (25/795) 發生痴呆 vs 丙戊酸組 8.3% (69/832)，經調整後 hazard ratio (HR) = 0.38，95% CI 0.24–0.60，p &lt; .001；同時顯著降低死亡風險 (HR = 0.56)</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">鋰鹽</span><span class="tag">情緒穩定劑</span><span class="tag">失智症</span><span class="tag">藥物安全</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>鋰鹽 versus 丙戊酸在雙極性障礙患者中對痴呆、死亡、自殺企圖與終末期腎病的影響：45 歲以上成人的傾向分數匹配回顧 cohort 研究</h3>
+          <p class="journal-source">Psychiatry research &middot; Lithium versus valproate in bipolar disorder: Associations with dementia, mortality, suicide attempt, and end-stage renal disease in adults aged 45 years and older - a propensity score-matched retrospective cohort study.</p>
+          <p>在 45 歲以上首次使用鋰鹽或丙戊酸治療之雙極性障礙患者中，鋰鹽組在平均隨訪約 8 年後，所有原因痴呆風險降低約 31%（HR 0.689），未指定痴呆與自殺企圖風險亦顯著降低，而血管性痴呆、死亡與終末期腎病無顯著差異。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">TriNetX 美國電子健康記錄網路中，2000–2025 年間首次使用鋰鹽或丙戊酸、診斷為雙極性障礙、年齡 ≥45 歲的成人</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">首次使用鋰鹽</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">首次使用丙戊酸</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">匹配後，鋰鹽組所有原因痴呆發生率 7.1% (207/3056) vs 丙戊酸組 10.8% (311/3056)，HR = 0.689 (95% CI 0.578–0.822, p&lt;.001)；未指定痴呆 HR 0.677 (p=.002)；自殺企圖 HR 0.594 (p=.010)；阿茲海默症風險呈現邊緣顯著 (p=.058)；血管性痴呆、死亡、ESRD 無顯著差異</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">鋰鹽</span><span class="tag">情緒穩定劑</span><span class="tag">失智症</span><span class="tag">自殺防治</span><span class="tag">藥物安全</span>
+            <a href="#" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>中老年雙極性障礙患者六國多中心皮質厚度研究：前額葉皮質 thinning 持續存在且鋰鹽可能緩解</h3>
+          <p class="journal-source">Bipolar disorders &middot; Cortical Thickness in Middle and Older Aged Adults With Bipolar Disorder Across Six International Sites.</p>
+          <p>在橫跨六國、年齡 40–70 歲的雙極性障礙患者中，背內側與背外側前迴皮質厚度顯著減少，且與年齡負相關；鋰鹽使用與前極及前 cingulate 皮質較厚相關，提示其可能具神經保護作用。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">來自六個 GAGE-BD 聯盟中心的雙極性障礙患者 (n=308) 與非精神病對照組 (n=287)，年齡 40–70 歲</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">結構磁共振成像 (sMRI) 檢查並測量 34 個腦區皮質厚度</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">非精神病對照組</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">雙極性障礙組在背內側 (VPFC) 和背外側 (DPFC) 前額葉皮質厚度顯著降低 (pFDR &lt; 0.05)，且皮質 thinning 與年齡顯著負相關 (p&lt;0.05)；鋰鹽使用者在前極極和前 cingulate 皮質厚度顯著增加 (pFDR &lt; 0.05)；年齡與診斷組間無顯著交互作用</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">OABD</span><span class="tag">腦影像</span><span class="tag">認知功能</span><span class="tag">鋰鹽</span><span class="tag">神經科學</span><span class="tag">精神藥理學</span>
+            <a href="#" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>運動對情緒狀態的即時影響：在有情緒障礙病史者中，運動顯著降低後續焦慮</h3>
+          <p class="journal-source">Psychiatry research &middot; The dynamic influence of exercise on emotional state among people with a history of mood disorder.</p>
+          <p>在具有躁鬱症或重度抑鬱症病史的 euthymic 個體中，自我報告運動與數小時後焦慮程度顯著降低（β = -1.706），但對悲傷、激躁或精力感無影響，顯示運動具有特定情緒調節作用。</p>
+          <div class="pico-grid">
+          <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自我報告具有躁鬱症 (n=110)、重度抑鬱症 (n=157)、焦慮無情緒障礙 (n=96) 或無精神疾病 (n=96) 病史的 euthymic 個體，年齡 11–85 歲</span></div>
+          <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">每日四次、持續兩週的生態瞬間評估 (EMA) 自我報告運動行為與情緒狀態（悲傷、焦慮、激躁、精力感，範圍 1–7）</span></div>
+          <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未運動時段</span></div>
+          <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">在躁鬱症或重度抑鬱症群體中，運動與數小時後焦慮顯著負相關 (β = -1.706, 95% CrI [-2.296, -1.048])；男女皆同；但對悲傷、激躁、精力感無顯著影響；情緒-運動動態在不同診斷組間無顯著差異，但躁鬱症亞型間存在個體內變異</span></div>
+        </div>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">生活品質</span><span class="tag">心理治療</span><span class="tag">睡眠與日夜節律</span><span class="tag">功能評估</span><span class="tag">多重心身疾病</span>
+            <a href="#" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">&#x1F4DA;</span>&#x5176;&#x4ED6;&#x503C;&#x5F97;&#x95DC;&#x6CE8;&#x7684;&#x6587;&#x737B;</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>精神疾病在有無失智症患者中的流行病學：安大略省、亞伯達省與曼尼托巴省的多司法管轄區橫斷面研究</h3>
+          <p class="journal-source">Journal of Alzheimer's disease : JAD</p>
+          <p>在加拿大三省的居家與長期照護服務對象中，伴失智症者精神疾病流行率顯著較高，多達 80% 的失智長照 residents 及 70% 的居家服務使用者併有任何精神疾病，雙極性障礙佔 4%。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">失智症</span><span class="tag">長期照護</span><span class="tag">社會決定因素</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>英格蘭在疫苗接種推廣期間及之後，重度精神疾病者感染 SARS-CoV-2 後死亡不平等：全國級回顧性關聯隊列研究</h3>
+          <p class="journal-source">The lancet. Psychiatry</p>
+          <p>雖然重度精神疾病（含雙極性障礙）者在疫情初期感染 SARS-CoV-2 後死亡風險較高，但疫苗接種後此差異已顯著減弱，顯示公共衛生介入對減少此群體健康不平等具效。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">藥物安全</span><span class="tag">公共衛生</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>梅毒感染與兩個真實世界隊列中後期失智症發生風險：台灣 NHIRD 與 TriNetX 亞太地區的和諧傾向分數匹配分析</h3>
+          <p class="journal-source">Brain, behavior, and immunity</p>
+          <p>既往梅毒感染與後期失智症風險顯著相關（合併 HR 1.48），提示性傳染病史應納入老年人失智風險評估，特別是對伴有精神疾病（如雙極性障礙）者。</p>
+          <div class="card-footer">
+            <span class="tag">失智症</span><span class="tag">生物標記</span><span class="tag">發炎</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>青少年情緒波動如何透過躁狂/輕躁狂症狀影響多動症與衝動性的關聯</h3>
+          <p class="journal-source">Australasian psychiatry : bulletin of Royal Australian and New Zealand College of Psychiatrists</p>
+          <p>在青少年中，躁狂/輕躁狂症狀（透過 MDQ 測量）部分中介了衝動性與 ADHD 嚴重程度之間的關聯，提醒臨床醫師在評估 ADHD 時應篩查亞臨床躁狂症狀以避免診斷遮蔽。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">心理治療</span><span class="tag">功能評估</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>重度精神疾病中的靜息態磁腦圖變化：系統性文獻回顧</h3>
+          <p class="journal-source">Neuroscience and biobehavioral reviews</p>
+          <p>靜息態 MEG 研究顯示雙極性障礙、精神分裂症與重度抑鬱症在 β 波力量、神經複雜度與慢波活動上存在共通與特異性改變，β 波可能為跨診斷生物標記，但直接跨診斷比較研究仍極為稀少。</p>
+          <div class="card-footer">
+            <span class="tag">腦影像</span><span class="tag">神經科學</span><span class="tag">生物標記</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>情緒症狀與情緒不穩定對新診斷雙極性障礙患者六個月內性慾與性困擾之影響：縱向研究</h3>
+          <p class="journal-source">Journal of psychiatric research</p>
+          <p>在新診斷雙極性障礙患者中，較高抑鬱症狀與性慾下降相關，較高躁狂症狀與性慾增加相關，而情緒不穩定則顯著預測性困擾增加，提示性功能應納入躁鬱症常規評估。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">生活品質</span><span class="tag">心理治療</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>親戚報告而非兒童自我報告的情緒波動能預測高遺傳風險青少年未來發展為雙極性障礙</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>在高家族風險青少年中，父母（非孩子本人）報告的情緒波動顯著預測未來發展為門檻值或亞臨床雙極性障礙，提示多來源資訊對早期風險辨識的重要性。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">心理治療</span><span class="tag">心理教育</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>基於智慧型手機被動與主動行為特徵的雙極性障礙亞型數位表型研究：型 I 與型 II 的區分</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>被動智慧型手機感測資料（如 GPS、加速度計）無法有效區分雙極性 I 及 II 型，但個人化機器學習模型（尤其是結合主動自報）能達到較佳辨識力（AUC 0.77+），支持數位表型在個人層面的潛在臨床應用。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">腦影像</span><span class="tag">生物標記</span><span class="tag">功能評估</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>社會經濟地位與精神疾病患者的身體共病關聯：全國登記研究</h3>
+          <p class="journal-source">Acta psychiatrica Scandinavica</p>
+          <p>低社會經濟地位會加重精神疾病（特別是精神病與雙極性障礙）患者患身體非傳染性疾病（如 COPD、糖尿病、心血管疾病）的風險，但對癌症影響較弱，提示社會因素是健康不平等的重要驅動力。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">多重心身疾病</span><span class="tag">社會決定因素</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>精神分裂症與分裂情感性障礙患者視丘核群及次核體積差異：神經影像研究</h3>
+          <p class="journal-source">Psychiatry research. Neuroimaging</p>
+          <p>分裂情感性障礙患者較精神分裂症患者表現出右側視丘顯著體積減少，特別是內側、內側後外側及內側腦外側核群，提示視丘 limbic 路徑在二者病理生理上存在差異。</p>
+          <div class="card-footer">
+            <span class="tag">腦影像</span><span class="tag">神經科學</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>以人工智慧心電圖判定的雙極性障礙患者加速生物老化：心電圖年齡減真實年齡顯著升高</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>雙極性障礙患者的 AI-ECG 年齡（ECG-Age）顯著高於其實際年齡（平均 Delta-Age +2.5 年），且較常達到加速老化門檻（DA ≥1SD），提示躁鬱症可能伴隨系統性生理老化，與心血管風險因素無關。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">生物標記</span><span class="tag">神經科學</span><span class="tag">精神藥理學</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>香港首次診斷精神疾病者自傷風險：16 年領土全覆蓋健康記錄研究</h3>
+          <p class="journal-source">European neuropsychopharmacology : the journal of the European College of Neuropsychopharmacology</p>
+          <p>在香港領土全覆蓋的紀錄中，首次診斷精神疾病者自傷事件發生率約為一般人口的 10.6 倍，其中躁鬱症風險比為 6.43，青少年與女性風險顯著較高，提示早期篩查與干預的迫切性。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">自殺防治</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>抗憂鬱藥物使用與未來發展為雙極性障礙之風險：香港兒童、青少年和青年單相抑鬱症的目標試驗仿真研究</h3>
+          <p class="journal-source">European neuropsychopharmacology : the journal of the European College of Neuropsychopharmacology</p>
+          <p>在香港未成年單相抑鬱症患者中，抗憂鬱藥物使用與未來 52 週內發展為雙極性障礙之風險呈現邊緣增加 (HR 2.14)，但短期 (12 週) 無顯著風險，提示此關聯可能由混雜因素而非藥物致因所致。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">抗精神病藥物</span><span class="tag">心理治療</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>夕型節律與情緒氣質、情緒調節失調及雙極譜系特徵的關聯：大型社區樣本觀察研究</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>夕型節律（晚睡晚起）者顯著較高情緒氣質（憂鬱、焦慮、易怒、環性 thymic）、情緒調節失調及雙極譜系分數，提示昏昏節律可作為躁鬱譜系行為標誌，但區域樣本限制其推廣性。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">睡眠與日夜節律</span><span class="tag">心理治療</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>雙極性障礙中孤獨感的發展路徑：兒童逆境、社會支持與精神病狀的互動作用</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>伴有精神病特徵的雙極性障礙患者孤獨感顯著較深，且社會支持無法緩解其孤獨感，提示此 subgroup 需創傷知照護與社會認知訓練等專門心理社會介入。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">心理治療</span><span class="tag">社會決定因素</span><span class="tag">抗精神病藥物</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>精神健康狀況與後續癌症風險：英國 Biobank 40 萬人前瞻性隊列研究</h3>
+          <p class="journal-source">International journal of cancer</p>
+          <p>在英國 Biobank 隊列中，躁鬱症診斷與後續癌症風險顯著相關（HR 1.29），尤其在男性中更強 (HR 1.54)，提示精神疾病應被視為癌症預防中的風險層級因子。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">多重心身疾病</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>1629 例接受抗憂鬱藥物治療之雙極性障礙患者的情緒轉折現象</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>在接受抗憂鬱藥物治療的雙極性障礙患者中，約 27.6% 會出現從憂鬱轉向躁狂/輕躁狂的情緒轉折，其發生與較高年齡、較多情節、家族精神病史及自殺史顯著相關，提醒臨床師在開藥時需評估個人風險因素。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">抗精神病藥物</span><span class="tag">復發預防</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>肺功能異常與精神疾病 onset 及進展的關聯：英國 Biobank 前瞻性隊列研究</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>肺功能異常（特別是保留比例受損 spirometry + 限制性模式）與精神疾病新發、共病惡化及死亡風險顯著正相關，提示呼吸系統健康應納入精神病患者長期管理。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">多重心身疾病</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>按年齡層層析重度精神疾病、失智症與缺血性中風之關聯：來自 PADRIS-PRESTO 隊列的發現</h3>
+          <p class="journal-source">European neuropsychopharmacology : the journal of the European College of Neuropsychopharmacology</p>
+          <p>重度精神疾病（含雙極性障礙）者在年輕時失智症風險極高（30–39 歲 OR 23.21），而缺血性中風風險則在中年 peaks（40–49 歲 OR 2.99），提示精神病照護需早期整合神經與代謝篩查。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">失智症</span><span class="tag">長期照護</span><span class="tag">社會決定因素</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>心肌梗塞後死亡率與精神疾病及 COVID-19 大流行的影響：英格蘭隊列研究</h3>
+          <p class="journal-source">European heart journal. Quality of care &amp;amp; clinical outcomes</p>
+          <p>心肌梗塞後一年內死亡率在精神疾病（特別是精神分裂症與雙極性障礙）患者中較高，但經調整接受指南照護後差異減縮，且 COVID-19 大流行未顯著加重此差異，強調標準化心臟照護執行的重要性。</p>
+          <div class="card-footer">
+            <span class="tag">老年躁鬱症</span><span class="tag">多重心身疾病</span><span class="tag">長期照護</span>
+            <a href="#" target="_blank" rel="noopener">PubMed &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">&#x1F4CA;</span>&#x4E3B;&#x984C;&#x5206;&#x4F48;</div>
+            <div class="topic-row">
+              <span class="topic-name">老年躁鬱症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">29</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">OABD</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">鋰鹽</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:14%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">失智症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:24%"></div></div>
+              <span class="topic-count">7</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">腦影像</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">生物標記</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:21%"></div></div>
+              <span class="topic-count">6</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">認知功能</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">情緒穩定劑</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:10%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經科學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:14%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">精神藥理學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:10%"></div></div>
+              <span class="topic-count">3</span>
+            </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">&#x1F3F7;&#xFE0F;</span>&#x95DC;&#x9375;&#x5B57;</div><div class="keywords"><span class="keyword">老年躁鬱症</span><span class="keyword">OABD</span><span class="keyword">鋰鹽</span><span class="keyword">失智症</span><span class="keyword">腦影像</span><span class="keyword">生物標記</span><span class="keyword">認知功能</span><span class="keyword">情緒穩定劑</span><span class="keyword">神經科學</span><span class="keyword">精神藥理學</span></div></div>
+
+  <div class="links-banner">
+    <a href="https://www.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">&#x1F3E5;</span>
+      <span class="banner-name">&#x674E;&#x653F;&#x6D0B;&#x8EAB;&#x5FC3;&#x8A3A;&#x6240;&#x9996;&#x9801;</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">&#x1F4E8;</span>
+      <span class="banner-name">&#x8A02;&#x95B1;&#x96FB;&#x5B50;&#x5831;</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">&#x2615;</span>
+      <span class="banner-name">Buy Me a Coffee</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>&#x8CC7;&#x6599;&#x4F86;&#x6E90;&#xFF1A;PubMed &middot; &#x5206;&#x6790;&#x6A21;&#x578B;&#xFF1A;nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/elder-bipolar">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
