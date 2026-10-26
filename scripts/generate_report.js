@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { dirname } from "path";
 
 const API_BASE = "https://integrate.api.nvidia.com/v1";
-const MODEL_FALLBACK_CHAIN = ["nvidia/nemotron-3-super-120b-a12b", "nvidia/nemotron-3-nano-30b-a3b"];
+const MODEL_FALLBACK_CHAIN = ["nvidia/nemotron-3.5-super-vl-120b-a12b", "z-ai/glm-5.3-flash"];
 
 const SYSTEM_PROMPT = `你是老年精神醫學領域的資深研究員與科學傳播者，專精老年躁鬱症（Older-Age Bipolar Disorder, OABD）。
 你的任務是：
