@@ -40,33 +40,130 @@ function parseArgs() {
   return opts;
 }
 
-function sanitizeJson(text) {
-  let clean = text.trim();
-  if (clean.startsWith("```")) {
-    const firstNewline = clean.indexOf("\n");
-    clean = firstNewline !== -1 ? clean.slice(firstNewline + 1) : clean.slice(3);
-    clean = clean.replace(/```+\s*$/, "");
-  }
-  clean = clean.trim();
-  try {
-    return JSON.parse(clean);
-  } catch {
-    const jsonStart = clean.indexOf("{");
-    const jsonEnd = clean.lastIndexOf("}");
-    if (jsonStart !== -1 && jsonEnd !== -1 && jsonEnd > jsonStart) {
-      try {
-        return JSON.parse(clean.slice(jsonStart, jsonEnd + 1));
-      } catch {
-        const fixed = clean.slice(jsonStart, jsonEnd + 1)
-          .replace(/,\s*}/g, "}")
-          .replace(/,\s*]/g, "]")
-          .replace(/\\n/g, " ")
-          .replace(/\t/g, " ");
-        return JSON.parse(fixed);
+function _isReportObject(value) {
+  return value !== null &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    ["market_summary", "top_picks", "all_papers"].some(key =>
+      Object.prototype.hasOwnProperty.call(value, key)
+    );
+}
+
+function _extractJsonCandidates(text) {
+  const candidates = [];
+  for (let start = 0; start < text.length; start++) {
+    const opener = text[start];
+    if (opener !== "{" && opener !== "[") continue;
+    const stack = [opener === "{" ? "}" : "]"];
+    let inString = false;
+    let escaped = false;
+    for (let index = start + 1; index < text.length; index++) {
+      const char = text[index];
+      if (inString) {
+        if (escaped) escaped = false;
+        else if (char === "\\") escaped = true;
+        else if (char === '"') inString = false;
+        continue;
+      }
+      if (char === '"') inString = true;
+      else if (char === "{") stack.push("}");
+      else if (char === "[") stack.push("]");
+      else if (char === "}" || char === "]") {
+        if (stack.length === 0 || char !== stack[stack.length - 1]) break;
+        stack.pop();
+        if (stack.length === 0) {
+          candidates.push(text.slice(start, index + 1));
+          break;
+        }
       }
     }
-    throw new Error("No valid JSON object found in response");
+    if (candidates.length >= 20) break;
   }
+  return candidates;
+}
+
+function _repairJsonSyntax(candidate) {
+  let output = "";
+  let inString = false;
+  for (let index = 0; index < candidate.length; index++) {
+    const char = candidate[index];
+    if (inString) {
+      if (char === "\\") {
+        const next = candidate[index + 1];
+        if (next === undefined) {
+          output += "\\\\";
+          continue;
+        }
+        if (next === "u" && /^[0-9a-f]{4}$/i.test(candidate.slice(index + 2, index + 6))) {
+          output += candidate.slice(index, index + 6);
+          index += 5;
+          continue;
+        }
+        if ('"\\/bfnrt'.includes(next)) {
+          output += char + next;
+          index++;
+          continue;
+        }
+        output += "\\\\";
+        continue;
+      }
+      if (char === '"') {
+        inString = false;
+        output += char;
+        continue;
+      }
+      const code = char.charCodeAt(0);
+      if (code < 32) {
+        const escapes = { "\n": "\\n", "\r": "\\r", "\t": "\\t" };
+        output += escapes[char] || "\\u" + code.toString(16).padStart(4, "0");
+      } else {
+        output += char;
+      }
+      continue;
+    }
+    if (char === '"') {
+      inString = true;
+      output += char;
+      continue;
+    }
+    if (char === ",") {
+      let lookahead = index + 1;
+      while (lookahead < candidate.length && /\s/.test(candidate[lookahead])) lookahead++;
+      if (candidate[lookahead] === "}" || candidate[lookahead] === "]") continue;
+    }
+    output += char;
+  }
+  return output;
+}
+
+function sanitizeJson(text) {
+  if (typeof text !== "string" || !text.trim()) {
+    throw new Error("Model response is empty");
+  }
+  const source = text.replace(/^\uFEFF/, "").trim();
+  const seen = new Set();
+  let attempt = 0;
+  for (const candidate of _extractJsonCandidates(source)) {
+    for (const variant of [candidate, _repairJsonSyntax(candidate)]) {
+      if (seen.has(variant)) continue;
+      seen.add(variant);
+      attempt++;
+      try {
+        const parsed = JSON.parse(variant);
+        const report = Array.isArray(parsed)
+          ? parsed.find(_isReportObject)
+          : parsed;
+        if (_isReportObject(report)) {
+          console.error("[INFO] JSON parsed successfully (candidate " + attempt + ")");
+          return report;
+        }
+      } catch (error) {
+        console.error("[WARN] JSON parse candidate " + attempt + " failed: " + error.message);
+      }
+    }
+  }
+  console.error("[WARN] No valid report JSON object found");
+  throw new Error("No valid report JSON object found");
 }
 
 async function callNvidiaApi(apiKey, model, messages, maxTokens = 16384) {
